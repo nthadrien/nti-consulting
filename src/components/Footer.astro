@@ -1,0 +1,125 @@
+---
+import Logo from "./Logo.astro";
+import FooterAccordion from "./FooterAccordion.astro";
+
+const targets = {
+    pages: [
+        { name: "acceuil", link: "/" },
+        { name: "services", link: "/services" },
+        { name: "termes & conditions", link: "/services" },
+        { name: "politique de condiidentialites", link: "/services" },
+        { name: "A propos de Nous", link: "/about" },
+    ],
+    services: [
+        { name: "Etude de feasibilite economiqu", link: "/" },
+        { name: "Business plan", link: "/services" },
+        { name: "Audit", link: "/about" },
+        { name: "Consultations", link: "/services" },
+        { name: "ficalites", link: "/about" },
+    ],
+    roles: [
+        { name: "Etude de feasibilite economiqu", link: "/" },
+        { name: "Business plan", link: "/services" },
+        { name: "Audit", link: "/about" },
+        { name: "Consultations", link: "/services" },
+        { name: "ficalites", link: "/about" },
+    ],
+};
+---
+
+<footer class="container">
+    <section>
+        <Logo />
+
+        <p>Vous pouvez nous suivre sur plusieurs plateformes:</p>
+
+        <p>
+            <a href="#">
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="14"
+                    height="14"
+                    viewBox="0 0 24 24"
+                    ><path
+                        fill="currentColor"
+                        d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64L12 9.548l6.545-4.91l1.528-1.145C21.69 2.28 24 3.434 24 5.457"
+                    ></path></svg
+                >
+            </a>
+            <a href="#">
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="14"
+                    height="14"
+                    viewBox="0 0 24 24"
+                    ><path
+                        fill="currentColor"
+                        fill-rule="evenodd"
+                        d="M23 0H1a1 1 0 0 0-1 1v22a1 1 0 0 0 1 1h11.75v-9h-3v-3.75h3v-3c0-3.1 1.963-4.625 4.728-4.625c1.324 0 2.463.099 2.794.142v3.24l-1.917.001c-1.504 0-1.855.715-1.855 1.763v2.479h3.75L19.5 15h-3l.06 9H23a1 1 0 0 0 1-1V1a1 1 0 0 0-1-1"
+                    ></path></svg
+                >
+            </a>
+
+            <a href="#">
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    ><path
+                        fill="currentColor"
+                        d="M8 0C3.581 0 0 3.581 0 8s3.581 8 8 8s8-3.581 8-8s-3.581-8-8-8m3.931 5.484l-1.313 6.184c-.091.441-.356.544-.725.341l-2-1.478l-.959.934c-.112.109-.2.2-.4.2c-.259 0-.216-.097-.303-.344L5.55 9.084l-1.978-.616c-.428-.131-.431-.425.097-.634l7.706-2.975c.35-.159.691.084.556.625"
+                    ></path></svg
+                >
+            </a>
+        </p>
+    </section>
+
+    <FooterAccordion heading="pages" list={targets.pages} />
+    <FooterAccordion heading="services" list={targets.services} />
+</footer>
+
+<p class="last container">
+    <span> &copy; 2024 All rights reserved</span>
+    <span> Designed & Coded by nthadrien.</span>
+</p>
+
+<style>
+    footer {
+        display: flex;
+        flex-flow: column-reverse wrap;
+        justify-content: space-evenly;
+        gap: 1rem;
+    }
+
+    section {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        gap: 0.6rem;
+    }
+
+    a {
+        margin-right: 12px;
+    }
+
+    .last {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    @media (min-width: 640px) {
+        footer {
+            flex-flow: row nowrap;
+            justify-content: space-between;
+        }
+
+        section {
+            min-width: 20%;
+            justify-content: flex-start;
+            align-items: flex-start;
+        }
+    }
+</style>

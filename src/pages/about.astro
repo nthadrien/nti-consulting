@@ -1,0 +1,122 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Partner from "../components/Partner.astro";
+const pageTitle = "About";
+const description = "Page es idee de nti consulting";
+
+// images
+import img1 from "../assets/p1.jpg";
+import img2 from "../assets/p2.jpg";
+import img3 from "../assets/p3.jpg";
+import Accordion from "../components/Accordion.astro";
+
+const partners = [
+    {
+        name: "DELAWARE SARL",
+        role: "Cabinet d'experts comptable, d'audit & de conseil",
+        description: "",
+        image: img1,
+    },
+    {
+        name: "NTI BILOA A.E",
+        role: "Auditeur & Gestionnaire de projet",
+        description: "",
+        image: img2,
+    },
+    {
+        name: "BILOA ANABA .G",
+        role: "Gestionnaire de projet",
+        description: "",
+        image: img3,
+    },
+    {
+        name: "NANA TCHUIMENI .H",
+        role: "Developpeur & CTO a Wankoudou",
+        description: "",
+        image: img3,
+    },
+];
+
+const faq = [
+    {
+        question: "Ce que nous faisons",
+        answer: "Business plan - Montage et étude de faisabilité économique des projets, Audits comptables, financiers et organisationnels Commissariats aux comptes , Commissariats aux apports, Manuel de procédures administratives, financières et comptables ; • Revue et des certification des états financiers ; • Inventaires et autres",
+    },
+    {
+        question: "Ce que nous faisons",
+        answer: "Business plan - Montage et étude de faisabilité économique des projets, Audits comptables, financiers et organisationnels Commissariats aux comptes , Commissariats aux apports, Manuel de procédures administratives, financières et comptables ; • Revue et des certification des états financiers ; • Inventaires et autres",
+    },
+    {
+        question: "Ce que nous faisons",
+        answer: "Business plan - Montage et étude de faisabilité économique des projets, Audits comptables, financiers et organisationnels Commissariats aux comptes , Commissariats aux apports, Manuel de procédures administratives, financières et comptables ; • Revue et des certification des états financiers ; • Inventaires et autres",
+    },
+    {
+        question: "Ce que nous faisons",
+        answer: "Business plan - Montage et étude de faisabilité économique des projets, Audits comptables, financiers et organisationnels Commissariats aux comptes , Commissariats aux apports, Manuel de procédures administratives, financières et comptables ; • Revue et des certification des états financiers ; • Inventaires et autres",
+    },
+    {
+        question: "Ce que nous faisons",
+        answer: "Business plan - Montage et étude de faisabilité économique des projets, Audits comptables, financiers et organisationnels Commissariats aux comptes , Commissariats aux apports, Manuel de procédures administratives, financières et comptables ; • Revue et des certification des états financiers ; • Inventaires et autres",
+    },
+    {
+        question: "Ce que nous faisons",
+        answer: "Business plan - Montage et étude de faisabilité économique des projets, Audits comptables, financiers et organisationnels Commissariats aux comptes , Commissariats aux apports, Manuel de procédures administratives, financières et comptables ; • Revue et des certification des états financiers ; • Inventaires et autres",
+    },
+];
+---
+
+<Layout title={pageTitle} description={description}>
+    <main class="container">
+        <h1 class="tx-cn">A props de Nous</h1>
+
+        <p>
+            NTI BUSINESS CONSULTING est une plateforme regroupant un cabinet
+            d’expertise comptable, d’audit, et de conseils, des gestionnaires de
+            projet ainsi que d’autres spécialistes nécessaires au développement
+            de votre entreprise.
+        </p>
+    </main>
+
+    <h2 class="tx-cn">Notre Team & Nos Partenaire</h2>
+
+    <div class="list">
+        {partners.map((item) => <Partner info={item} />)}
+    </div>
+
+    <main class="container">
+        <h2>Notre Vision</h2>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Id ipsum
+            culpa dolor illum quasi corporis atque pariatur, dicta asperiores
+            minus iusto dignissimos labore dolorum? Debitis quas dolorem
+            mollitia laboriosam. Consequatur.
+        </p>
+
+        <h2>Clients</h2>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Id ipsum
+            culpa dolor illum quasi corporis atque pariatur, dicta asperiores
+            minus iusto dignissimos labore dolorum? Debitis quas dolorem
+            mollitia laboriosam. Consequatur.
+        </p>
+
+        <h2 class="tx-cn">F.A.Q <br /> (Foire aux questions).</h2>
+
+        {
+            faq.map((item) => (
+                <Accordion question={item.question} answer={item.answer} />
+            ))
+        }
+    </main>
+</Layout>
+
+<style>
+    .list {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-evenly;
+        align-items: center;
+        gap: 1rem;
+        margin: 2rem auto;
+    }
+</style>

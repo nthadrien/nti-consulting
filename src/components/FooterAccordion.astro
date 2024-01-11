@@ -1,0 +1,81 @@
+---
+// interface Props {
+//   name: string;
+//   greeting?: string;
+// }
+const { list, heading } = Astro.props;
+---
+
+<section>
+    <h3>
+        {heading}
+        <span> ❮ </span>
+    </h3>
+
+    <div>
+        {list.map((item) => <a href={item.link}>{item.name}</a>)}
+    </div>
+</section>
+
+<style>
+    section {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        width: 100%;
+        gap: 0.8rem;
+    }
+
+    h3 {
+        width: 100%;
+        height: 46px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        text-transform: capitalize;
+        border-bottom: 1px solid var(--bk-clr, #ddd);
+    }
+
+    div {
+        display: flex;
+        flex-direction: column;
+        gap: 0.32rem;
+        max-height: 0;
+        justify-content: space-between;
+        overflow: hidden;
+        transition: all 0.3s linear;
+    }
+
+    section:hover div {
+        max-height: 300px;
+    }
+
+    section span {
+        rotate: 180deg;
+        transition: all 0.28s ease-in-out;
+    }
+
+    section:hover span {
+        rotate: 90deg;
+    }
+
+    @media (min-width: 640px) {
+        section {
+            min-width:25%;
+            border: none;
+        }
+
+        div {
+            max-height: 100%;
+        }
+
+        h3 {
+            border: none;
+        }
+
+        h3 span {
+            display: none;
+        } 
+    }
+</style>

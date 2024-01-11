@@ -1,0 +1,63 @@
+---
+const { answer, question } = Astro.props;
+---
+
+<section>
+    <label>
+        {question}
+        <input type="checkbox" />
+        <small> ❮</small>
+    </label>
+    <p>{answer}</p>
+</section>
+
+<style>
+    section {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        width: 100%;
+        max-width: calc( var(--max-wd) - 10%);
+        height: fit-content;
+        margin: 0 auto;
+    }
+
+    label {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        text-transform: capitalize;
+        border-bottom: 1px solid var(--bk-clr, #ddd);
+        cursor: pointer;
+        font-weight: bolder;
+    }
+
+    label:hover {
+        color: var(--pr-clr);
+    }
+
+    label > input {
+        width: 0;
+    }
+
+    p {
+        height: fit-content;
+        max-height: 0;
+        justify-content: space-between;
+        overflow: hidden;
+    }
+    
+    small {
+        rotate: -90deg ;
+    }
+
+    section:has(input:checked) p {
+        max-height: 100px;
+    }
+
+    label:has(input:checked) small {
+        rotate: 90deg;
+    }
+</style>
