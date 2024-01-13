@@ -1,0 +1,39 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { getCollection } from "astro:content";
+const pageTitle = "Nos Services";
+const description =
+    "Prêt à faire passer votre entreprise au niveau supérieur ? Contactez-nous dès aujourd'hui pour en savoir plus sur la manière dont NTI-Consulting peut soutenir la croissance de votre entreprise.";
+
+const services = await getCollection("services");
+---
+
+<Layout title={pageTitle} description={description}>
+    <main class="container">
+        <h2 class="tx-cn">Nos Services</h2>
+
+        <p>
+            NTI Business Consulting est une team de spécialisés dans
+            l'élaboration de plans d'affaires solides et la réalisation d'études
+            de faisabilité économique pour aider les entreprises à prospérer
+            dans le paysage concurrentiel d'aujourd'hui. Notre équipe d'experts
+            est dédiée à fournir des solutions sur mesure qui répondent aux
+            besoins uniques de chaque client.
+        </p>
+
+        <h2>Nos Services</h2>
+        <ul>
+            {
+                services.map((service) => (
+                    <li>
+                        {service.data.title}
+                        <p>{service.data.description}</p>
+                        <a href={"/nti-consulting/service/" + service.slug}>
+                            plus
+                        </a>
+                    </li>
+                ))
+            }
+        </ul>
+    </main>
+</Layout>
