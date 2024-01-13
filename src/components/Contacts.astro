@@ -5,15 +5,14 @@ import myImage from "../assets/point.jpg";
 
 <main>
     <h1 class="tx-cn">Contact</h1>
-    <p class="tx-cn">
-        Vous cherchez à monter un projet, développer ou assurer le suivi de
-        votre entreprise, contactez-nous !
-    </p>
+
+    <h2 class="tx-cn">
+        Prêt à faire passer votre entreprise au niveau supérieur ?
+    </h2>
 
     <Image
         src={myImage}
-        width="180"
-        height="180"
+        class="img"
         decoding="async"
         loading="lazy"
         alt="A description of my image."
@@ -25,6 +24,9 @@ import myImage from "../assets/point.jpg";
              +237 696 560 588 <br />
              +237 677 316 329 <br />
              ntibusinessconsulting@gmail.com
+        </p>
+        <p>
+            Contactez-nous dès aujourd'hui pour en savoir plus sur la manière dont NTI Businness Consulting peut soutenir la croissance de votre entreprise ou business.
         </p>
         <input type="text" name="name" placeholder="Name" required />
         <input type="text" name="contact" placeholder="Email / Tel" required />
@@ -45,7 +47,7 @@ import myImage from "../assets/point.jpg";
         justify-content: center;
         align-items: flex-start;
         padding: 3rem 1rem;
-        gap: 2rem;
+        gap: 3rem;
         background: rgb(26, 19, 32);
         color: white;
     }
@@ -63,12 +65,12 @@ import myImage from "../assets/point.jpg";
         padding: 10px;
     }
 
-    h1,
+    h1, h2,
     input,
     textarea,
     form,
     div,
-    p {
+    p, .img {
         width: 100%;
     }
 
@@ -78,11 +80,16 @@ import myImage from "../assets/point.jpg";
         }
 
         form {
-            width: 68%;
+            width: 50%;
         }
 
         div {
             width: 30%;
+        }
+
+        .img {
+            height: 210px;
+            width: 210px;
         }
     }
 </style>

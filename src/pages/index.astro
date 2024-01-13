@@ -1,24 +1,36 @@
 ---
 import Layout from "../layouts/Layout.astro";
-const pageTitle = "Acceuil";
-const description = "Page es idee de nti consulting";
+import { getCollection } from "astro:content";
+const pageTitle = "Bienvenue chez NTI-Consulting";
+const description = "Prêt à faire passer votre entreprise au niveau supérieur ? Contactez-nous dès aujourd'hui pour en savoir plus sur la manière dont NTI-Consulting peut soutenir la croissance de votre entreprise.";
+
+
+const services = await getCollection('services');
 ---
 
 <Layout title={pageTitle} description={description}>
 	<main class="container">
 		<h2 class="tx-cn">Bienvenu</h2>
 
-		<p class="tx-cn ">
-			Nous visons à être votre partenaire de confiance afin de vous offrir
-			une assistance fiable et déterminante pour le développement de votre
-			entreprise.
+		<p>
+			NTI Business Consulting est une team de spécialisés dans l'élaboration de plans d'affaires solides et la réalisation d'études de faisabilité économique pour aider les entreprises à prospérer dans le paysage concurrentiel d'aujourd'hui. Notre équipe d'experts est dédiée à fournir des solutions sur mesure qui répondent aux besoins uniques de chaque client.
 		</p>
 
-		<h2>Ce que nous faisons</h2>
-		 • Business plan - Montage et étude de faisabilité économique des
-		projets ; • Audits comptables, financiers et organisationnels ; •
-		Commissariats aux comptes ; • Commissariats aux apports ; • Manuel de
-		procédures administratives, financières et comptables ; • Revue et
-		certification des états financiers ; • Inventaires et autres …
+		<h2>Nos Services</h2>
+		<ul>
+			{services.map( service =>
+				 <li> {service.data.title} 
+				 <a href={'nti-consulting/services/'+service.slug}> plus </a>
+				 </li>)}
+		</ul>
+
+		<h2>Pourquoi Choisir NTI-Consulting ?</h2>
+		
+
+		Conseils d'Experts : Notre équipe de professionnels expérimentés fournit des conseils d'experts et un soutien à chaque étape de votre parcours professionnel.
+		Solutions Personnalisées : Nous comprenons que chaque entreprise est unique, et nous adaptons nos services pour répondre aux besoins spécifiques de chaque client.
+		Engagement envers le Succès : Nous nous engageons à promouvoir le succès de nos clients et à les aider à atteindre leurs objectifs commerciaux.
+		Contactez-nous
+		Prêt à faire passer votre entreprise au niveau supérieur ? Contactez-nous dès aujourd'hui pour en savoir plus sur la manière dont NTI-Consulting peut soutenir la croissance de votre entreprise.
 	</main>
 </Layout>
