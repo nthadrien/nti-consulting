@@ -79,7 +79,7 @@ const targets = {
     <FooterAccordion heading="services" list={targets.services} />
 </footer>
 
-<p class="last container">
+<p class="last">
     <span> &copy; 2024 All rights reserved</span>
     <span> Designed & Coded by nthadrien.</span>
 </p>
@@ -109,7 +109,12 @@ const targets = {
         display: flex;
         flex-flow: row wrap;
         justify-content: space-evenly;
-        border-top: 1px solid var(--sc-clr);
+        gap: 0.6em;
+        border-top: 1px solid var(--cm-clr);
+        max-width: var(--max-wd, 900px );
+        margin: 0 auto;
+        padding: 1rem;
+        border-radius: 30px;
     }
 
     @media (min-width: 640px) {

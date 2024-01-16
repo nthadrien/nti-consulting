@@ -2,7 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import Partner from "../components/Partner.astro";
 const pageTitle = "About";
-const description = "Page es idee de nti consulting";
+const description = " Nous sommes fiers de notre partenariat avec nos clients et de notre contribution à leur succès.";
 
 // images
 import img1 from "../assets/p1.jpg";
@@ -31,8 +31,14 @@ const partners = [
     },
     {
         name: "NANA TCHUIMENI .H",
-        role: "Developpeur & CTO a Wankoudou",
-        description: "",
+        role: "Developpeur Freelance & CTO",
+        description: "Physicien de formation, qui s'est lancer il y a 3 ans dans le development. Il est un developpeur exprimenter et freelance sur plusieurs plateformes Occidentals",
+        image: img3,
+    },
+    {
+        name: "Ecris Sor .D",
+        role: "Architecte",
+        description: "Physicien de formation, qui s'est lancer il y a 3 ans dans le development. Il est un developpeur exprimenter et freelance sur plusieurs plateformes Occidentals",
         image: img3,
     },
 ];
@@ -43,31 +49,23 @@ const faq = [
         answer: "Business plan - Montage et étude de faisabilité économique des projets, Audits comptables, financiers et organisationnels Commissariats aux comptes , Commissariats aux apports, Manuel de procédures administratives, financières et comptables ; • Revue et des certification des états financiers ; • Inventaires et autres",
     },
     {
-        question: "Ce que nous faisons",
-        answer: "Business plan - Montage et étude de faisabilité économique des projets, Audits comptables, financiers et organisationnels Commissariats aux comptes , Commissariats aux apports, Manuel de procédures administratives, financières et comptables ; • Revue et des certification des états financiers ; • Inventaires et autres",
+        question : "Quels services proposez-vous ?",
+        answer:"Nous offrons une gamme complète de services allant de la consultation stratégique à la mise en œuvre opérationnelle. Nos domaines d'expertise comprennent la gestion financière, la stratégie d'entreprise, la conformité réglementaire, et bien plus encore."
     },
     {
-        question: "Ce que nous faisons",
-        answer: "Business plan - Montage et étude de faisabilité économique des projets, Audits comptables, financiers et organisationnels Commissariats aux comptes , Commissariats aux apports, Manuel de procédures administratives, financières et comptables ; • Revue et des certification des états financiers ; • Inventaires et autres",
+        question: "Comment puis-je prendre rendez-vous avec votre équipe ?",
+        answer: "Pour prendre rendez-vous avec notre équipe, veuillez remplir le formulaire de contact sur notre site web ou nous appeler directement. Nous serons ravis de discuter de vos besoins et de trouver des solutions adaptées à votre entreprise ou business.",
     },
     {
-        question: "Ce que nous faisons",
-        answer: "Business plan - Montage et étude de faisabilité économique des projets, Audits comptables, financiers et organisationnels Commissariats aux comptes , Commissariats aux apports, Manuel de procédures administratives, financières et comptables ; • Revue et des certification des états financiers ; • Inventaires et autres",
-    },
-    {
-        question: "Ce que nous faisons",
-        answer: "Business plan - Montage et étude de faisabilité économique des projets, Audits comptables, financiers et organisationnels Commissariats aux comptes , Commissariats aux apports, Manuel de procédures administratives, financières et comptables ; • Revue et des certification des états financiers ; • Inventaires et autres",
-    },
-    {
-        question: "Ce que nous faisons",
-        answer: "Business plan - Montage et étude de faisabilité économique des projets, Audits comptables, financiers et organisationnels Commissariats aux comptes , Commissariats aux apports, Manuel de procédures administratives, financières et comptables ; • Revue et des certification des états financiers ; • Inventaires et autres",
+        question: "Quelle est votre approche en matière de confidentialité des données ?",
+        answer: "La protection des données et la confidentialité sont des priorités pour nous. Nous respectons les normes les plus strictes en matière de protection des données et nous nous engageons à garantir la sécurité et la confidentialité des informations de nos clients.",
     },
 ];
 ---
 
 <Layout title={pageTitle} description={description}>
     <main class="container">
-        <h1 class="tx-cn">A props de Nous</h1>
+        <h1 class="aft tx-cn">A props de Nous</h1>
 
         <p>
             NTI BUSINESS CONSULTING est une plateforme regroupant un cabinet
@@ -77,7 +75,7 @@ const faq = [
         </p>
     </main>
 
-    <h2 class="tx-cn">Notre Team & Nos Partenaire</h2>
+    <h2 class="aft tx-cn">Notre Team & Nos Partenaire</h2>
 
     <div class="list">
         {partners.map((item) => <Partner info={item} />)}
@@ -94,15 +92,19 @@ const faq = [
             Notre équipe d'experts est dédiée à fournir des solutions sur mesure qui répondent aux besoins uniques de chaque client. Ceci dans la but de permettre a de nombreux business de croitre et d'apporter le developement de notre continent le Cameroun.
         </p>
 
-        <h2>Clients</h2>
+        <h3>Nos Clients</h3>
         <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Id ipsum
-            culpa dolor illum quasi corporis atque pariatur, dicta asperiores
-            minus iusto dignissimos labore dolorum? Debitis quas dolorem
-            mollitia laboriosam. Consequatur.
+            Nous avons eu le privilège de travailler avec une diversité de clients, allant des petites, aux moyennes entreprises ou business. La confiance que nos clients nous accordent est le reflet de notre engagement envers la qualité, la fiabilité et le service personnalisé.
         </p>
 
-        <h2 class="tx-cn">F.A.Q <br /> (Foire aux questions).</h2>
+        <ul>
+            <li>ONGs, et d'autres organisation a but non lucratifs qui font des lever de fonds</li>
+            <li>Commercant et Entrepreneurs cosmetiques</li>
+            <li>Le Governement </li>
+            <li> etc</li>
+        </ul>
+
+        <h2 class=" aft tx-cn">F.A.Q <br /> (Foire aux questions).</h2>
 
         {
             faq.map((item) => (
