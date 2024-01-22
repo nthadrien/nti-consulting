@@ -9,10 +9,12 @@ const { image , description} = Astro.props;
 
 <header>
     
-    <h3>
-        {description}
-    </h3>
-    <button class="btn">Contactez Nous</button>
+    <section>
+        <h3>
+            {description}
+        </h3>
+        <button class="btn">Contactez Nous</button>
+    </section>
 </header>
 
 <style>
@@ -24,10 +26,17 @@ const { image , description} = Astro.props;
         background-size: cover;
         background-blend-mode: darken;
         color: white;
+        display: grid;
+        place-content: center;
+        padding: 1rem;
+    }
+
+    section {
         display: flex;
         flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 0.6em;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 2rem;
+        max-width: 760px;
     }
 </style>

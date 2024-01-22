@@ -4,25 +4,25 @@ import FooterAccordion from "./FooterAccordion.astro";
 
 const targets = {
     pages: [
-        { name: "acceuil", link: "/" },
-        { name: "services", link: "/services" },
-        { name: "termes & conditions", link: "/services" },
+        { name: "acceuil", link: "/nti-consulting/" },
+        { name: "services", link: "/nti-consulting/services" },
+        { name: "termes & conditions", link: "/nti-consulting/ermes-et-conditions" },
         { name: "politique de condiidentialites", link: "/services" },
         { name: "A propos de Nous", link: "/about" },
     ],
     services: [
         { name: "Etude de feasibilite economiqu", link: "/" },
-        { name: "Business plan", link: "/services" },
-        { name: "Audit", link: "/about" },
+        { name: "Business plan", link: "/nti-consulting/services" },
+        { name: "Audit", link: "/nti-consulting/about" },
         { name: "Consultations", link: "/services" },
         { name: "ficalites", link: "/about" },
     ],
     roles: [
-        { name: "Etude de feasibilite economiqu", link: "/" },
-        { name: "Business plan", link: "/services" },
-        { name: "Audit", link: "/about" },
-        { name: "Consultations", link: "/services" },
-        { name: "ficalites", link: "/about" },
+        { name: "Etude de feasibilite economiqu", link: "/nti-consulting/" },
+        { name: "Business plan", link: "/nti-consulting/services" },
+        { name: "Audit", link: "/nti-consulting/about" },
+        { name: "Consultations", link: "/nti-consulting/services" },
+        { name: "ficalites", link: "/nti-consulting/about" },
     ],
 };
 ---
@@ -79,10 +79,10 @@ const targets = {
     <FooterAccordion heading="services" list={targets.services} />
 </footer>
 
-<p class="last">
+<div class="last">
     <span> &copy; 2024 All rights reserved</span>
     <span> Designed & Coded by nthadrien.</span>
-</p>
+</div>
 
 <style>
     footer {
@@ -115,6 +115,7 @@ const targets = {
         margin: 0 auto;
         padding: 1rem;
         border-radius: 30px;
+        font-size: smaller;
     }
 
     @media (min-width: 640px) {
@@ -127,6 +128,10 @@ const targets = {
             min-width: 20%;
             justify-content: flex-start;
             align-items: flex-start;
+        }
+
+        .last {
+            border-radius: 0.8em;
         }
     }
 </style>

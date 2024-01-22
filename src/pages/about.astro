@@ -3,7 +3,6 @@ import Layout from "../layouts/Layout.astro";
 import Partner from "../components/Partner.astro";
 const pageTitle = "About";
 const description = " Nous sommes fiers de notre partenariat avec nos clients et de notre contribution à leur succès.";
-
 // images
 import img1 from "../assets/p1.jpg";
 import img2 from "../assets/p2.jpg";
@@ -14,31 +13,21 @@ const partners = [
     {
         name: "DELAWARE SARL",
         role: "Cabinet d'experts comptable, d'audit & de conseil",
-        description: "",
+        description:
+            "DELAWARE SARL est un cabinet d’expertise comptable, d’audit et de conseil, spécialisé dans le montage des projets, gestion et suivi des entreprises. ",
         image: img1,
     },
     {
-        name: "NTI BILOA A.E",
+        name: "NTI BILOA ALPHONSE EMMANUEL",
         role: "Auditeur & Gestionnaire de projet",
-        description: "",
+        description:
+            "Économiste de formation et formé en entreprise, est spécialiste en audit, conception de business plan et rédaction de manuel des procédures.",
         image: img2,
     },
     {
-        name: "BILOA ANABA .G",
-        role: "Gestionnaire de projet",
-        description: "",
-        image: img3,
-    },
-    {
-        name: "NANA TCHUIMENI .H",
-        role: "Developpeur Freelance & CTO",
-        description: "Physicien de formation, qui s'est lancer il y a 3 ans dans le development. Il est un developpeur exprimenter et freelance sur plusieurs plateformes Occidentals",
-        image: img3,
-    },
-    {
-        name: "Ecris Sor .D",
-        role: "Architecte",
-        description: "Physicien de formation, qui s'est lancer il y a 3 ans dans le development. Il est un developpeur exprimenter et freelance sur plusieurs plateformes Occidentals",
+        name: "BILOA ANABA GASPARD",
+        role: "Gestionnaire de projet certifié",
+        description: "Il est sur ......",
         image: img3,
     },
 ];
@@ -49,16 +38,19 @@ const faq = [
         answer: "Business plan - Montage et étude de faisabilité économique des projets, Audits comptables, financiers et organisationnels Commissariats aux comptes , Commissariats aux apports, Manuel de procédures administratives, financières et comptables ; • Revue et des certification des états financiers ; • Inventaires et autres",
     },
     {
-        question : "Quels services proposez-vous ?",
-        answer:"Nous offrons une gamme complète de services allant de la consultation stratégique à la mise en œuvre opérationnelle. Nos domaines d'expertise comprennent la gestion financière, la stratégie d'entreprise, la conformité réglementaire, et bien plus encore."
+        question: "Quels services proposez-vous ?",
+        answer: "Nous offrons une gamme complète de services allant de la consultation stratégique à la mise en œuvre opérationnelle. Nos domaines d'expertise comprennent la gestion financière, la stratégie d'entreprise, la conformité réglementaire, et bien plus encore.",
+        plus:"/nti-consulting/services"
     },
     {
         question: "Comment puis-je prendre rendez-vous avec votre équipe ?",
         answer: "Pour prendre rendez-vous avec notre équipe, veuillez remplir le formulaire de contact sur notre site web ou nous appeler directement. Nous serons ravis de discuter de vos besoins et de trouver des solutions adaptées à votre entreprise ou business.",
+        plus:"#contacts"
     },
     {
-        question: "Quelle est votre approche en matière de confidentialité des données ?",
+        question:"Quelle est votre approche en matière de confidentialité des données ?",
         answer: "La protection des données et la confidentialité sont des priorités pour nous. Nous respectons les normes les plus strictes en matière de protection des données et nous nous engageons à garantir la sécurité et la confidentialité des informations de nos clients.",
+        plus:"/nti-consulting/politique-de-confidentialité"
     },
 ];
 ---
@@ -82,33 +74,48 @@ const faq = [
     </div>
 
     <main class="container">
-        <h2>Notre Vision</h2>
+        <h2 class="aft tx-cn">Notre Vision</h2>
         <p>
-			Nous visons à être votre partenaire de confiance afin de vous offrir
-			une assistance fiable et déterminante pour le développement de votre
-			entreprise.
-		</p>
+            Nous visons à être votre partenaire de confiance afin de vous offrir
+            ne assistance fiable et déterminante pour le développement de votre
+            entreprise.
+        </p>
         <p>
-            Notre équipe d'experts est dédiée à fournir des solutions sur mesure qui répondent aux besoins uniques de chaque client. Ceci dans la but de permettre a de nombreux business de croitre et d'apporter le developement de notre continent le Cameroun.
+            Notre équipe d'experts est dédiée à fournir des solutions adaptées
+            qui répondent aux besoins uniques de chaque client. Ceci dans la but
+            de permettre a de nombreux business de croitre et d'apporter le
+            developement de notre continent le Cameroun.
         </p>
 
         <h3>Nos Clients</h3>
         <p>
-            Nous avons eu le privilège de travailler avec une diversité de clients, allant des petites, aux moyennes entreprises ou business. La confiance que nos clients nous accordent est le reflet de notre engagement envers la qualité, la fiabilité et le service personnalisé.
+            Nous avons eu le privilège de travailler avec une diversité de
+            clients, allant des petites, aux moyennes entreprises ou business,
+            ainsi que d’autres organismes et institutions publics au Cameroun et
+            à l’étranger. La confiance que nos clients nous accordent est le
+            reflet de notre engagement envers la qualité, la fiabilité et le
+            service personnalisé que nous offrons.
         </p>
 
+        <p>Ceux ci sont:</p>
+
         <ul>
-            <li>ONGs, et d'autres organisation a but non lucratifs qui font des lever de fonds</li>
-            <li>Commercant et Entrepreneurs cosmetiques</li>
-            <li>Le Governement </li>
-            <li> etc</li>
+            <li>Institutions et entreprises publiques</li>
+            <li>
+                ONGs, et d'autres organisation a but non lucratifs qui font des
+                lever de fonds
+            </li>
+            <li>Organisations non gouvernementales</li>
+            <li>Entreprises privées</li>
+            <li>Commercant et Entrepreneurs diverts</li>
+            <li>et bien d'autres</li>
         </ul>
 
-        <h2 class=" aft tx-cn">F.A.Q <br /> (Foire aux questions).</h2>
+        <h2 class="aft tx-cn">F.A.Q <br /> (Foire aux questions).</h2>
 
         {
             faq.map((item) => (
-                <Accordion question={item.question} answer={item.answer} />
+                <Accordion question={item.question} answer={item.answer} plus={item.plus} />
             ))
         }
     </main>
@@ -118,9 +125,33 @@ const faq = [
     .list {
         display: flex;
         flex-flow: row wrap;
-        justify-content: space-evenly;
+        justify-content: center;
         align-items: center;
         gap: 1rem;
         margin: 2rem auto;
+        padding: 1rem;
+    }
+
+    ul {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        list-style: none;
+    }
+
+    li {
+        padding: 1rem 2rem;
+        font-weight: bolder;
+        border-radius: 12px;
+        cursor: pointer;
+        user-select: none;
+        font-size: 1.2em;
+    }
+
+    li:hover {
+        background: var(--cm-clr);
+        color: var(--nt-clr);
     }
 </style>

@@ -1,14 +1,20 @@
 ---
-const { answer, question } = Astro.props;
+interface Props {
+    answer: string;
+    question: string;
+    plus?: string;
+}
+
+const { answer, question , plus } = Astro.props;
 ---
 
 <section>
     <label>
         {question}
         <input type="checkbox" />
-        <small> ❮</small>
+        <small> ❮ </small>
     </label>
-    <p>{answer}</p>
+    <p>{answer}  { plus ? <a href={plus}>plus d'info ici →</a> : ''}</p>
 </section>
 
 <style>
@@ -31,7 +37,7 @@ const { answer, question } = Astro.props;
         text-transform: capitalize;
         border-bottom: 1px solid var(--bk-clr, #ddd);
         cursor: pointer;
-        font-weight: bolder;
+        font-weight: bold;
     }
 
     label:hover {
@@ -54,7 +60,7 @@ const { answer, question } = Astro.props;
     }
 
     section:has(input:checked) p {
-        max-height: 100px;
+        max-height: 300px;
     }
 
     label:has(input:checked) small {

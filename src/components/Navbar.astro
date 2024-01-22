@@ -1,5 +1,7 @@
 ---
+import LanguageSwitcher from "./LanguageSwitcher.astro";
 import Logo from "./Logo.astro";
+import ThemeSwitcher from "./ThemeSwitcher.astro";
 ---
 
 <nav>
@@ -9,25 +11,29 @@ import Logo from "./Logo.astro";
         <a href="/">accueil</a>
         <a href="/about">a propos de nous</a>
         <a  href="#contacts">contacts</a>
+        <LanguageSwitcher />
+    <ThemeSwitcher />
     </div>
 
     <label>
         <input type="checkbox" name="nav-toggle" />
     </label>
+
+    
+
 </nav>
 
 <style>
     nav {
-        display: grid;
-        grid-template-columns: repeat( 2, minmax( 120px, 540px));
-        justify-content: center;
+        display: flex;
+        justify-content: space-between;
         align-items: center;
         width: 100%;
         padding: 1rem;
         position: fixed;
         top: 0;
+        color: inherits ;
         background: white;
-        color: inherit;
         box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
         height: fit-content;
         z-index: 3;
