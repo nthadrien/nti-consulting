@@ -2,35 +2,96 @@
 import Layout from "../layouts/Layout.astro";
 import { getCollection } from "astro:content";
 const pageTitle = "Bienvenue chez NTI-Consulting";
-const description = "Prêt à faire passer votre entreprise au niveau supérieur ? Contactez-nous dès aujourd'hui pour en savoir plus sur la manière dont NTI-Consulting peut soutenir la croissance de votre entreprise.";
+const description =
+	"Prêt à faire passer votre entreprise au niveau supérieur ? Contactez-nous dès aujourd'hui pour en savoir plus sur la manière dont NTI-Consulting peut soutenir la croissance de votre entreprise.";
+const link = "#contacts";
+const services = await getCollection("services");
 
-
-const services = await getCollection('services');
+const WhyUs = [
+	{
+		icon: "❿",
+		point: "Conseils d'Experts",
+		reason: "Notre équipe de professionnels expérimentés fournit des conseils d'experts et un soutien à chaque étape de votre parcours professionnel.",
+	},
+	{
+		icon: "⛱",
+		point: "Solutions Personnalisées ",
+		reason: "Nous comprenons que chaque entreprise est unique, et nous adaptons nos services pour répondre aux besoins spécifiques de chaque client",
+	},
+	{
+		icon: "🌱",
+		point: "Engagement envers le Succès",
+		reason: "Nous nous engageons à promouvoir le succès de nos clients et à les aider à atteindre leurs objectifs commerciaux.",
+	},
+	{
+		icon: "⛏",
+		point: "Vos concurrents s'ameloire, pourquoi pas vous?",
+		reason: "Nous garantissont que nos services vous permettrons d'etiendre vos competiteurs si tel est votre desir. Contactez-nous Prêt à faire passer votre entreprise au niveau supérieur ?",
+	},
+];
 ---
 
-<Layout title={pageTitle} description={description}>
+<Layout title={pageTitle} description={description} link={link}>
 	<main class="container">
 		<h2 class="aft tx-cn">Bienvenu</h2>
 
 		<p>
-			NTI Business Consulting est une team de spécialisés dans l'élaboration de plans d'affaires solides et la réalisation d'études de faisabilité économique pour aider les entreprises à prospérer dans le paysage concurrentiel d'aujourd'hui. Notre équipe d'experts est dédiée à fournir des solutions sur mesure qui répondent aux besoins uniques de chaque client.
+			NTI Business Consulting est une team de spécialisés dans
+			l'élaboration de plans d'affaires solides et la réalisation d'études
+			de faisabilité économique pour aider les entreprises à prospérer
+			dans le paysage concurrentiel d'aujourd'hui. Notre équipe d'experts
+			est dédiée à fournir des solutions sur mesure qui répondent aux
+			besoins uniques de chaque client.
 		</p>
 
 		<h2>Nos Services</h2>
-		<ul>
-			{services.map( service =>
-				 <li> {service.data.title} 
-				 <a href={'nti-consulting/services/'+service.slug}> plus </a>
-				 </li>)}
-		</ul>
 
-		<h2>Pourquoi Choisir NTI-Consulting ?</h2>
-		
+		<div>
+			<p>
+				Nous offerons une varietes unique de services dans le but de vous apporter les meilleurs solutions possible. 
+				Le plus souvant nous sommes soliciter pour des services tels que:
+				{services.map((service) => <span>{service.data.title}, </span>)}
+			</p>
 
-		Conseils d'Experts : Notre équipe de professionnels expérimentés fournit des conseils d'experts et un soutien à chaque étape de votre parcours professionnel.
-		Solutions Personnalisées : Nous comprenons que chaque entreprise est unique, et nous adaptons nos services pour répondre aux besoins spécifiques de chaque client.
-		Engagement envers le Succès : Nous nous engageons à promouvoir le succès de nos clients et à les aider à atteindre leurs objectifs commerciaux.
-		Contactez-nous
-		Prêt à faire passer votre entreprise au niveau supérieur ? Contactez-nous dès aujourd'hui pour en savoir plus sur la manière dont NTI-Consulting peut soutenir la croissance de votre entreprise.
+			<a class="cbtn" href={"/nti-consulting/services/"}>
+				Voir Plus Sur Nos Services ➝</a
+			>
+		</div>
+
+		<h2 class="aft tx-cn">Pourquoi Choisir NTI-Consulting ?</h2>
+
+		<article>
+			{
+				WhyUs.map((item) => (
+					<section class="slide slide-top">
+						<h1>{item.icon}</h1>
+						<h3>{item.point} </h3>
+						<p>{item.reason}</p>
+					</section>
+				))
+			}
+		</article>
 	</main>
 </Layout>
+
+<style>
+	article {
+		display: grid;
+		grid-template-columns: 1fr;
+		justify-content: space-between;
+		gap: 1rem;
+		height: fit-content;
+	}
+
+	section.slide {
+		border: 1px solid #8f8989;
+		border-radius: 12px;
+		padding: 1rem;
+	}
+
+	@media (min-width: 640px) {
+		article {
+			grid-template-columns: repeat(2, 1fr);
+		}
+	}
+</style>

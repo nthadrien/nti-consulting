@@ -4,7 +4,7 @@ author: Himanshu
 description: Un document détaillé qui décrit la vision, les objectifs
 date: 2020-10-14
 image:
-    url: 'https://docs.astro.build/assets/full-logo-light.png'
+    url: '../../assets/stars.png'
     alt: 'The full Astro logo.'
 ---
 

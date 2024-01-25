@@ -3,7 +3,7 @@ import { Image } from "astro:assets";
 const { info } = Astro.props;
 ---
 
-<div>
+<div class="fade-in">
     <Image
         src={info.image}
         class="img"
@@ -12,7 +12,7 @@ const { info } = Astro.props;
         alt="A description of my image."
     />
     <h4>{info.name}</h4>
-    <p style="color: #605959;">{info.role}</p>
+    <p style="color: #8d8181;">{info.role}</p>
     <p>{info.description || "Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum."}</p>
 
     <a href="#contacts">Contact</a>
@@ -39,10 +39,15 @@ const { info } = Astro.props;
     a {
         padding: 0.4rem;
         width: 100%;
-        background: #ddd;
         text-align: center;
+        color: inherit;
+        background: #f0ebeb;
     }
-    
+
+    :global(.dark) a {
+        background: var(--pr-clr);
+    }
+
     a:hover {
         background: black;
         color: white;

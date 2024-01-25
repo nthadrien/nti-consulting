@@ -2,15 +2,14 @@
 import Layout from "../layouts/Layout.astro";
 import { getCollection } from "astro:content";
 const pageTitle = "Nos Services";
-const description =
-    "Prêt à faire passer votre entreprise au niveau supérieur ? Contactez-nous dès aujourd'hui pour en savoir plus sur la manière dont NTI-Consulting peut soutenir la croissance de votre entreprise.";
+const description ="❝Demander un service à quelqu'un est le plus souvent la plus haute marque de considération que puisse lui donner un homme fort de son caractère et de sa propre estime.❞_ Paul Thiébault";
 
 const services = await getCollection("services");
 ---
 
 <Layout title={pageTitle} description={description}>
     <main class="container">
-        <h2 class="tx-cn">Nos Services</h2>
+        <h2 class="aft tx-cn">Nos Services</h2>
 
         <p>
             NTI Business Consulting est une team de spécialisés dans
@@ -25,11 +24,12 @@ const services = await getCollection("services");
         <ul>
             {
                 services.map((service) => (
-                    <li>
-                        {service.data.title}
+                    <li class="slide slide-top">
+                        <img class='img' src={''} alt={service.data.image.alt} />
+                        <h3>{service.data.title}</h3>
                         <p>{service.data.description}</p>
-                        <a href={"/nti-consulting/service/" + service.slug}>
-                            plus
+                        <a class="sbtn" href={"/nti-consulting/service/" + service.slug}>
+                            plus ➝
                         </a>
                     </li>
                 ))
@@ -37,3 +37,36 @@ const services = await getCollection("services");
         </ul>
     </main>
 </Layout>
+
+<style>
+
+    ul {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    li {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 1rem;
+        max-width: 320px;
+        width: 100%;
+    }
+
+    .sbtn {
+        border-radius: 12px;
+        background: var(--cm-clr);
+        color: var(--nt-clr);
+        padding:0.4em 0.7em;
+    }
+
+    .sbtn:hover {
+        background: var(--pr-clr);
+    }
+
+</style>

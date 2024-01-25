@@ -1,19 +1,20 @@
 ---
+import Navbar from './Navbar.astro';
 interface Props {
     image?: string;
     description?: string;
+    link?:string;
 }
 
-const { image , description} = Astro.props;
+const { image , description, link } = Astro.props;
 ---
 
 <header>
-    
     <section>
         <h3>
             {description}
         </h3>
-        <button class="btn">Contactez Nous</button>
+        { link ? <a href={link} class="btn">Contactez Nous</a> : ''}
     </section>
 </header>
 
@@ -28,15 +29,18 @@ const { image , description} = Astro.props;
         color: white;
         display: grid;
         place-content: center;
+        gap: 2rem;
         padding: 1rem;
     }
 
     section {
+        margin: auto;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         align-items: flex-start;
-        gap: 2rem;
-        max-width: 760px;
+        gap: 2.5rem;
+        max-width: 640px;
+        height: fit-content;
     }
 </style>
