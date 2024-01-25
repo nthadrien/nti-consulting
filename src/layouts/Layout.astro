@@ -163,14 +163,9 @@ const { title, description, image, link } = Astro.props;
 	}
 
 	/* This is the section of intersection observers */
-
 	.fade-in {
 		opacity: 0 ;
 		transition: all 0.98s ease-in;
-	}
-
-	.fade-in:nth-of-type(2n) {
-		transition: all 1.2s ease-out;
 	}
 
 	.slider {
@@ -181,10 +176,6 @@ const { title, description, image, link } = Astro.props;
 		transform: translateY( 120px);
 		opacity: 0;
 		transition: all 1s ease;
-	}
-
-	.slide-top:nth-of-type(2n) {
-		transition: all 1.6s linear;
 	}
 
 	.slide-left {

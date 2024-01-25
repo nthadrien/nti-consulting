@@ -6,8 +6,6 @@ const targets = {
     pages: [
         { name: "acceuil", link: "/nti-consulting/" },
         { name: "services", link: "/nti-consulting/services" },
-        { name: "termes & conditions", link: "/nti-consulting/ermes-et-conditions" },
-        { name: "politique de condiidentialites", link: "/services" },
         { name: "A propos de Nous", link: "/about" },
     ],
     services: [
@@ -17,13 +15,10 @@ const targets = {
         { name: "Consultations", link: "/services" },
         { name: "ficalites", link: "/about" },
     ],
-    roles: [
-        { name: "Etude de feasibilite economiqu", link: "/nti-consulting/" },
-        { name: "Business plan", link: "/nti-consulting/services" },
-        { name: "Audit", link: "/nti-consulting/about" },
-        { name: "Consultations", link: "/nti-consulting/services" },
-        { name: "ficalites", link: "/nti-consulting/about" },
-    ],
+    client: [
+        { name: "termes & conditions", link: "/nti-consulting/termes-et-conditions"},
+        { name: "politique de condiidentialites", link: "/nti-consulting/termes-et-conditions" }
+    ]
 };
 ---
 
@@ -77,6 +72,7 @@ const targets = {
 
     <FooterAccordion heading="pages" list={targets.pages} />
     <FooterAccordion heading="services" list={targets.services} />
+    <FooterAccordion heading="client" list={targets.client} />
 </footer>
 
 <div class="last">
@@ -111,7 +107,7 @@ const targets = {
         justify-content: space-evenly;
         gap: 0.6em;
         border-top: 1px solid var(--cm-clr);
-        max-width: var(--max-wd, 900px );
+        max-width: var(--max-wd, 900px);
         margin: 0 auto;
         padding: 1rem;
         border-radius: 30px;
@@ -119,7 +115,8 @@ const targets = {
     }
 
     @media (min-width: 640px) {
-        footer, .last {
+        footer,
+        .last {
             flex-flow: row nowrap;
             justify-content: space-between;
         }

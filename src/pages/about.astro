@@ -11,25 +11,31 @@ import Accordion from "../components/Accordion.astro";
 
 const partners = [
     {
-        name: "DELAWARE SARL",
+        name: "DELAWARE Sarl",
         role: "Cabinet d'experts comptable, d'audit & de conseil",
         description:
             "DELAWARE SARL est un cabinet d’expertise comptable, d’audit et de conseil, spécialisé dans le montage des projets, gestion et suivi des entreprises. ",
         image: img1,
     },
     {
-        name: "NTI BILOA ALPHONSE EMMANUEL",
+        name: "Nti Biloa Alphonse Emmanuel",
         role: "Auditeur & Gestionnaire de projet",
         description:
             "Économiste de formation et formé en entreprise, est spécialiste en audit, conception de business plan et rédaction de manuel des procédures.",
         image: img2,
     },
     {
-        name: "BILOA ANABA GASPARD",
+        name: "Biloa Anaba Gaspard",
         role: "Gestionnaire de projet certifié",
         description: "Il est sur ......",
         image: img3,
     },
+    {
+        name: 'Anaba Marieette Léa',
+        role: "Auditeur & Contrôleur de Gestion",
+        description:"Elle est ...",
+        image: img3
+    }
 ];
 
 const faq = [
@@ -69,7 +75,7 @@ const faq = [
 
     <h2 class="aft tx-cn">Notre Team & Nos Partenaire</h2>
 
-    <div class="list">
+    <div class="container list">
         {partners.map((item) => <Partner info={item} />)}
     </div>
 
@@ -99,7 +105,7 @@ const faq = [
 
         <p>Ceux ci sont:</p>
 
-        <ul class="slider">
+        <ul>
             <li class="slide fade-in">Institutions et entreprises publiques</li>
             <li>
                 ONGs, et d'autres organisation a but non lucratifs qui font des
@@ -123,13 +129,12 @@ const faq = [
 
 <style>
     .list {
-        display: flex;
-        flex-flow: row wrap;
+        display: grid;
+        grid-template-columns: 1fr;
         justify-content: center;
         align-items: center;
         gap: 1rem;
         margin: 2rem auto;
-        padding: 1rem;
     }
 
     ul {
@@ -153,5 +158,15 @@ const faq = [
     li:hover {
         background: var(--cm-clr);
         color: var(--nt-clr);
+    }
+
+    @media (min-width: 640px) {
+
+        .list {
+            grid-template-columns: repeat( auto-fit, 240px);
+            justify-content: center;
+            align-items: center;
+        }
+        
     }
 </style>
