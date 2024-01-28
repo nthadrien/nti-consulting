@@ -5,7 +5,7 @@ description: Un document nécessaire pour la mise en place d'un système cohére
 date: 2023-11-28
 tags: ['commissariare','évaluation','transparence']
 image:
-    url: 'https://docs.astro.build/assets/full-logo-light.png'
+    url: '/src/assets/p3.jpg'
     alt: 'The full Astro logo.'
 ---
 

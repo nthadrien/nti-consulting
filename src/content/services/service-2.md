@@ -4,7 +4,7 @@ author: Mr Alphonse
 description: Un examen approfondi des états financiers, des processus comptables
 date: 2020-10-14
 image:
-    url: 'https://docs.astro.build/assets/full-logo-light.png'
+    url: '/src/assets/point.jpg'
     alt: 'The full Astro logo.'
 ---
 

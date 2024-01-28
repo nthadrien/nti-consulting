@@ -1,0 +1,62 @@
+---
+import type { ImageMetadata } from 'astro';
+import { Image } from 'astro:assets';
+
+interface Props {
+   info : {
+    title:string;
+    description: string;
+    image: {  url: string; alt: string;}
+   };
+   link: string;
+};
+
+const { info, link } = Astro.props;
+const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/*.{jpeg,jpg,png,gif}');
+
+if (!images[info.image.url]) throw new Error(`"${info.image.url}" does not exist in glob: "src/assets/*.{jpeg,jpg,png,gif}"`);
+---
+
+
+<li class="slide slide-top">
+    <Image class="img " src={images[info.image.url]()} alt={info.image.alt} />
+    <h4>{info.title}</h4>
+    <p>{info.description}</p>
+    <a class="sbtn" href={"/nti-consulting/service/" + link }>
+        plus ➝
+    </a>
+</li>
+
+
+<style>
+
+li {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        padding: 1rem;
+        gap: 1rem;
+        max-width: 320px;
+        width: 100%;
+    }
+
+    .img {
+        height: 140px;
+        width: 260px;
+        background: black;
+    }
+
+    .sbtn {
+        border-radius: 12px;
+        background: var(--cm-clr);
+        color: var(--nt-clr);
+        padding:0.4em 0.7em;
+    }
+
+    .sbtn:hover {
+        background: var(--pr-clr);
+    }
+
+</style>
+</style>

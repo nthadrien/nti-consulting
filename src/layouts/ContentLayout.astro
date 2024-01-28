@@ -1,6 +1,6 @@
 ---
 import BaseLayout from "./Layout.astro";
-const { frontmatter } = Astro.props;
+const { frontmatter  } = Astro.props;
 ---
 
 <BaseLayout title={frontmatter.title} image={frontmatter.image} description={frontmatter.description}>
@@ -9,5 +9,8 @@ const { frontmatter } = Astro.props;
   <p class="tx-cn" >Written by: {frontmatter.author}</p>
   <main class="content container">
     <slot />
+    <p style="margin: 16px auto;" class="tx-cn">
+      <button class="btn" onclick="history.go(-1)" >❮❮ revenir</button>
+    </p>
   </main>
 </BaseLayout>

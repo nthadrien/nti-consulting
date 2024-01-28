@@ -15,15 +15,10 @@ const { Content } = await entry.render();
 ---
 <ContentLayout frontmatter={entry.data}>
   <Content />
-
-  <section>
-    <h2>Voir Aussi</h2>
-  </section>
 </ContentLayout>
 
-<style is:global>
+<style>
   ul , ol {
     padding-left: 1rem;
   }
-
 </style>

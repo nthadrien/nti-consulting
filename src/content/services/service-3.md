@@ -5,7 +5,7 @@ description: Certifier la régularité et la sincérité des comptes annuels des
 date: 2020-10-14
 tags: ['Commissariat','CAC','Transparence']
 image:
-    url: 'https://docs.astro.build/assets/full-logo-light.png'
+    url: '/src/assets/p2.jpg'
     alt: 'The full Astro logo.'
 ---
 

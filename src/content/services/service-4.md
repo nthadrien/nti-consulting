@@ -5,7 +5,7 @@ description: Certifier la régularité et la sincérité des comptes annuels des
 date: 2020-10-14
 tags: ['commissariare','évaluation','transparence']
 image:
-    url: 'https://docs.astro.build/assets/full-logo-light.png'
+    url: '/src/assets/p1.jpg'
     alt: 'The full Astro logo.'
 ---
 # Commissariat aux apports

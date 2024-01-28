@@ -5,7 +5,7 @@ description: Seules les personnes inscrites au tableau de l’ordre des experts 
 date: 2023-11-28
 tags: ['commissariare','évaluation','transparence']
 image:
-    url: 'https://docs.astro.build/assets/full-logo-light.png'
+    url: '/src/assets/services.jpg'
     alt: 'The full Astro logo.'
 ---
 
