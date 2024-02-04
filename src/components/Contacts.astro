@@ -1,4 +1,6 @@
 ---
+
+const mytext = encodeURIComponent('Bjr, On sait comment faire ici');
 ---
 
 <main  id="contacts" >
@@ -16,8 +18,10 @@
     <form action="">
         <p>
             <strong>Contacter nous :</strong><br />
-             +237 696 560 588 <br />
-             +237 677 316 329 <br />
+            <a href=`https://wa.me/237677316329?text=${mytext}`>
+                +237 696 560 588 <br />
+                +237 677 316 329 <br />
+            </a> 
              ntibusinessconsulting@gmail.com
         </p>
         <input type="text" name="name" placeholder="Name" required />
