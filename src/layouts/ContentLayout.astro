@@ -10,7 +10,13 @@ const { frontmatter  } = Astro.props;
   <main class="content container">
     <slot />
     <p style="margin: 16px auto;" class="tx-cn">
-      <button class="btn" onclick="history.go(-1)" >❮❮ revenir</button>
+      <button onclick="history.go(-1)" >❮❮ revenir</button>
     </p>
   </main>
 </BaseLayout>
+
+<style>
+  button {
+    border: none;
+  }
+</style>

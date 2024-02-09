@@ -32,12 +32,12 @@ document.getElementById("themeToggle").addEventListener("click", handleToggleCli
 
 const header = document.querySelector('header');
 const faders = document.querySelectorAll('.fade-in');
-const sliders = document.querySelectorAll('.slide');
+const sliders = document.querySelectorAll('.slide-left,.slide-top,.slide-right');
 const navbar = document.querySelector('nav');
 
 const navOption = {
   // root: header,
-  rootMargin: "-100px",
+  rootMargin: "-90px",
   threshold: 0,
 };
 
@@ -49,7 +49,7 @@ const navObserver = new IntersectionObserver(function (entries, navOption) {
 }, navOption);
 
 const faderOption = {
-  threshold: 1.0,
+  threshold: 0.98,
   rootMargin: "0px 0px 190px 0px"
 };
 
@@ -65,8 +65,7 @@ const faderObserver = new IntersectionObserver(function (entries, faderOption) {
 
 
 const sliderOption = {
-  threshold: 1.0,
-  rootMargin: "20px 0px 0px 0px"
+  threshold: 0.4,
 };
 
 const sliderObserver = new IntersectionObserver(function (entries, navObserver) {
@@ -82,3 +81,4 @@ const sliderObserver = new IntersectionObserver(function (entries, navObserver) 
 navObserver.observe(header);
 faders.forEach( fader => faderObserver.observe(fader) );
 sliders.forEach( slide => sliderObserver.observe(slide) );
+console.log(sliders);

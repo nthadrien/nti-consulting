@@ -21,7 +21,7 @@ const services = await getCollection("services");
             besoins uniques de chaque client.
         </p>
 
-        <h2>Nos Services</h2>
+        <h2 class="aft tx-cn">Nos Services</h2>
         <ul>
             {services.map((service) => <ServiceCard info={service.data} link={service.slug} />)}
         </ul>

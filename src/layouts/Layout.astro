@@ -85,6 +85,11 @@ const { title, description, image, link } = Astro.props;
 		color: var( --cm-clr);
 	}
 
+	button:active {
+		outline: 3px solid rgba(105, 105, 105, 0.66);
+		border-radius: 6px ;
+	}
+
 	h1 {
 		font-size: var(--fs-h1);
 	}
@@ -115,7 +120,7 @@ const { title, description, image, link } = Astro.props;
 	}
 
 	.btn:hover {
-		background: linear-gradient( 45deg, var(--pr-clr) 30%, var(--sc-clr) 20% );
+		background: linear-gradient( 45deg, var(--pr-clr) 10%, rgba(66, 7, 138, 0.256) 80% );
 		color: white;
 	}
 
@@ -127,6 +132,11 @@ const { title, description, image, link } = Astro.props;
 
 	.content {
 		max-width: 800px;
+	}
+
+	.content ul {
+		padding-left: 1.4rem ;
+		list-style: disc;
 	}
 
 	.tx-cn {
@@ -165,7 +175,7 @@ const { title, description, image, link } = Astro.props;
 	/* This is the section of intersection observers */
 	.fade-in {
 		opacity: 0 ;
-		transition: all 0.98s ease-in;
+		transition: all 1.2s ease-in;
 	}
 
 	.slider {
@@ -180,27 +190,21 @@ const { title, description, image, link } = Astro.props;
 
 	.slide-left {
 		transform: translateX(-50%);
-		transition: all 0.8s linear;
-		background: red;
+		transition: all 0.9s linear;
 	}
 
 	.slide-right {
 		transform: translateX(50%);
 		transition: all 0.9s linear;
-		background: blue;
 	}
 
 	.fade-in.appear {
 		opacity: 1;
 	}
 
-	.slide.appear {
-		transform: translateX(0);
-		opacity: 1;
-	}
-
-	.slide-top.appear {
-		transform: translateY(0);
+	.slide-top.appear,
+	.slide-left.appear, .slide-right.appear {
+		transform: translate(0);
 		opacity: 1;
 	}
 </style>

@@ -44,21 +44,16 @@ const WhyUs = [
 			besoins uniques de chaque client.
 		</p>
 
-		<h2>Nos Services</h2>
-
-		<div>
-			<p>
-				Nous offerons une varietes unique de services dans le but de vous apporter les meilleurs solutions possible. 
-				Le plus souvant nous sommes soliciter pour des services tels que:
-				{services.map((service) => <span>{service.data.title}, </span>)}
-			</p>
-
-			<a class="cbtn" href={"/nti-consulting/services/"}>
-				Voir Plus Sur Nos Services ➝</a
-			>
-		</div>
-
 		<h2 class="aft tx-cn">Pourquoi Choisir NTI-Consulting ?</h2>
+
+		<p>
+			Au Cameroun, le taux de fermeture des entreprises par an est estimé
+			à 20% pour les moyennes entreprises(ME) ; 31% pour les petites
+			entreprises (PE) ; 39% pour les très petites entreprises (TPE). Cela
+			résulte en partie des étapes manquées à la création ainsi qu'aux
+			suivis des entreprises au cours de leurs exploitations. Grâce à nos
+			services, vous avez l'assurance de prospérer.
+		</p>
 
 		<article>
 			{
@@ -71,6 +66,21 @@ const WhyUs = [
 				))
 			}
 		</article>
+
+		<h2>Nos Services</h2>
+
+		<div>
+			<p>
+				Nous offerons une varietes unique de services dans le but de
+				vous apporter les meilleurs solutions possible. Le plus souvant
+				nous sommes soliciter pour des services tels que:
+				{services.map((service) => <span>{service.data.title}, </span>)}
+			</p>
+
+			<a class="cbtn" href={"/nti-consulting/services/"}>
+				Voir Plus Sur Nos Services ➝</a
+			>
+		</div>
 	</main>
 </Layout>
 
