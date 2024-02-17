@@ -1,0 +1,110 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { getCollection } from "astro:content";
+const pageTitle = "Bienvenue chez NTI-Consulting";
+const description = "Ready to take your business to the next level?";
+const link = "#contacts";
+const services = await getCollection("services");
+
+const WhyUs = [
+	{
+		icon: "❿",
+		point: "Expert Advice",
+		reason: "Our team of experienced professionals provides expert advice and support at every stage of your professional journey.",
+	},
+	{
+		icon: "⛱",
+		point: "Customized Solutions",
+		reason: "We understand that every business is unique, and we tailor our services to meet the specific needs of each client.",
+	},
+	{
+		icon: "🌱",
+		point: "Commitment to Success",
+		reason: "We are committed to promoting the success of our clients and helping them achieve their business goals.",
+	},
+	{
+		icon: "⛏",
+		point: "Your competitors are improving, why not you?",
+		reason: "We guarantee that our services will help you outperform your competitors if that is your desire. Contact us Ready to take your business to the next level?",
+	},
+];
+---
+
+<Layout title={pageTitle} description={description} link={link}>
+	<main class="container">
+		<h2 class="aft tx-cn">Welcome</h2>
+
+		<p>
+			In Cameroon, the annual business closure rate is estimated at 20%
+			for medium enterprises (ME), 31% for small enterprises (PE), and 39%
+			for very small enterprises (TPE). This is partly due to missed steps
+			in the creation and follow-up of businesses during their operations.
+			With our services, you are assured of thriving.
+		</p>
+
+		<p>
+			NTI Business Consulting is a team of specialists in developing
+			strong business plans and conducting economic feasibility studies to
+			help businesses thrive in today's competitive landscape. Our team of
+			experts is dedicated to providing customized solutions that meet the
+			unique needs of each client.
+		</p>
+
+		<h2 class="aft tx-cn">Pourquoi Choisir NTI-Consulting ?</h2>
+
+		<p>
+			We offer a unique variety of services aimed at providing you with
+			the best possible solutions. Most often, we are sought after for
+			services such as:
+		</p>
+
+		<article>
+			{
+				WhyUs.map((item) => (
+					<section class="slide slide-top">
+						<h1>{item.icon}</h1>
+						<h3>{item.point} </h3>
+						<p>{item.reason}</p>
+					</section>
+				))
+			}
+		</article>
+
+		<h2>Services</h2>
+
+		<div>
+			<p>
+				We offer a unique variety of services with the aim of bring you
+				the best possible solutions. Most often we are solicited for
+				services such as:
+				{services.map((service) => <span>{service.data.title}, </span>)}
+			</p>
+
+			<a class="cbtn" href={"/nti-consulting/services/"}>
+				See more ➝
+			</a>
+		</div>
+	</main>
+</Layout>
+
+<style>
+	article {
+		display: grid;
+		grid-template-columns: 1fr;
+		justify-content: space-between;
+		gap: 1rem;
+		height: fit-content;
+	}
+
+	section.slide {
+		border: 1px solid #8f8989;
+		border-radius: 12px;
+		padding: 1rem;
+	}
+
+	@media (min-width: 640px) {
+		article {
+			grid-template-columns: repeat(2, 1fr);
+		}
+	}
+</style>

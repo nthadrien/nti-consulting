@@ -1,0 +1,173 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Partner from "../components/Partner.astro";
+const pageTitle = "About";
+const description =
+    " Nous sommes fiers de notre partenariat avec nos clients et de notre contribution à leur succès.";
+// images
+import img1 from "../assets/p1.jpg";
+import img2 from "../assets/p2.jpg";
+import img3 from "../assets/p3.jpg";
+import Accordion from "../components/Accordion.astro";
+
+const partners = [
+    {
+        name: "DELAWARE Sarl",
+        role: "Cabinet d'experts comptable, d'audit & de conseil",
+        description:
+            "DELAWARE SARL est un cabinet d’expertise comptable, d’audit et de conseil, spécialisé dans le montage des projets, gestion et suivi des entreprises. ",
+        image: img1,
+    },
+    {
+        name: "Nti Biloa Alphonse Emmanuel",
+        role: "Auditeur & Gestionnaire de projet",
+        description:
+            "L'homme polyvalent de la team. Économiste de formation et formé en entreprise, est spécialiste en audit, conception de business plan et rédaction de manuel des procédures.",
+        image: img2,
+    },
+    {
+        name: "Biloa Anaba Gaspard",
+        role: "Gestionnaire de projet certifié",
+        description: "Un spécialiste méticuleux, qui a des nombreuses compétences. Il est connu pour sa participation dans projet Plantains de Ndjolé au Cameroun et bien d'autres.",
+        image: img3,
+    },
+    {
+        name: "Anaba Marieette Léa",
+        role: "Auditeur & Contrôleur de Gestion",
+        description: "Le bijou rare et inspirant de notre team. Une diplômé de l'Essec & IUGET qui fournie des services tels que contrôle de gestion et inventaire",
+        image: img3,
+    },
+];
+
+const faq = [
+    {
+        question: "Ce que nous faisons",
+        answer: "Business plan - Montage et étude de faisabilité économique des projets, Audits comptables, financiers et organisationnels Commissariats aux comptes , Commissariats aux apports, Manuel de procédures administratives, financières et comptables ; • Revue et des certification des états financiers ; • Inventaires et autres",
+    },
+    {
+        question: "Quels services proposez-vous ?",
+        answer: "Nous offrons une gamme complète de services allant de la consultation stratégique à la mise en œuvre opérationnelle. Nos domaines d'expertise comprennent la gestion financière, la stratégie d'entreprise, la conformité réglementaire, et bien plus encore.",
+        plus: "/nti-consulting/services",
+    },
+    {
+        question: "Comment puis-je prendre rendez-vous avec votre équipe ?",
+        answer: "Pour prendre rendez-vous avec notre équipe, veuillez remplir le formulaire de contact sur notre site web ou nous appeler directement. Nous serons ravis de discuter de vos besoins et de trouver des solutions adaptées à votre entreprise ou business.",
+        plus: "#contacts",
+    },
+    {
+        question:
+            "Quelle est votre approche en matière de confidentialité des données ?",
+        answer: "La protection des données et la confidentialité sont des priorités pour nous. Nous respectons les normes les plus strictes en matière de protection des données et nous nous engageons à garantir la sécurité et la confidentialité des informations de nos clients.",
+        plus: "/nti-consulting/politique-de-confidentialité",
+    },
+];
+---
+
+<Layout title={pageTitle} description={description}>
+    <main class="container">
+        <h1 class="aft tx-cn">A props de Nous</h1>
+
+        <p>
+            NTI BUSINESS CONSULTING est une plateforme regroupant un cabinet
+            d’expertise comptable, d’audit, et de conseils, des gestionnaires de
+            projet ainsi que d’autres spécialistes nécessaires au développement
+            de votre entreprise.
+        </p>
+
+        <h2 class="aft tx-cn">Notre Team & Nos Partenaire</h2>
+
+        <div class="list">
+            {partners.map((item) => <Partner info={item} />)}
+        </div>
+
+        <h2 class="aft tx-cn">Notre Vision</h2>
+        <p>
+            Nous visons à être votre partenaire de confiance afin de vous offrir
+            ne assistance fiable et déterminante pour le développement de votre
+            entreprise.
+        </p>
+        <p>
+            Notre équipe d'experts est dédiée à fournir des solutions adaptées
+            qui répondent aux besoins uniques de chaque client. Ceci dans la but
+            de permettre a de nombreux business de croitre et d'apporter le
+            developement de notre continent le Cameroun.
+        </p>
+
+        <h3>Nos Clients</h3>
+        <p>
+            Nous avons eu le privilège de travailler avec une diversité de
+            clients, allant des petites, aux moyennes entreprises ou business,
+            ainsi que d’autres organismes et institutions publics au Cameroun et
+            à l’étranger. La confiance que nos clients nous accordent est le
+            reflet de notre engagement envers la qualité, la fiabilité et le
+            service personnalisé que nous offrons.
+        </p>
+
+        <p>Ceux ci sont:</p>
+
+        <ul class="slider">
+            <li class="fade-in">Institutions et entreprises publiques</li>
+            <li>
+                ONGs, et d'autres organisation a but non lucratifs qui font des
+                lever de fonds
+            </li>
+            <li class="slide-left">Organisations non gouvernementales</li>
+            <li>Entreprises privées</li>
+            <li class="slide-right">Commercant et Entrepreneurs diverts</li>
+            <li class="fade-in">et bien d'autres</li>
+        </ul>
+
+        <h2 class="aft tx-cn">F.A.Q <br /> (Foire aux questions).</h2>
+
+        {
+            faq.map((item) => (
+                <Accordion
+                    question={item.question}
+                    answer={item.answer}
+                    plus={item.plus}
+                />
+            ))
+        }
+    </main>
+</Layout>
+
+<style>
+    .list {
+        display: grid;
+        grid-template-columns: 1fr;
+        justify-content: space-evenly;
+        align-items: center;
+        gap: 1rem;
+        margin: 3rem auto;
+    }
+
+    ul {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        list-style: none;
+    }
+
+    li {
+        padding: 1rem 2rem;
+        font-weight: bolder;
+        border-radius: 12px;
+        cursor: pointer;
+        user-select: none;
+        font-size: 1.2em;
+    }
+
+    li:hover {
+        background: var(--cm-clr);
+        color: var(--nt-clr);
+    }
+
+    @media (min-width: 640px) {
+        .list {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+    }
+</style>

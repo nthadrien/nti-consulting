@@ -1,30 +1,11 @@
+---
+import { languages } from '../i18n/ui';
+---
 
-<select name="">
-    <option value="En">English</option>
-    <option value="Fr">Francais</option>
-</select>
-
-
-<style>
-
-    select {
-        appearance: none;
-        width: 68px;
-        outline: none;
-        border: none;
-        background-color: transparent;
-        color: inherit;
-        cursor: pointer;
-    }
-
-    option {
-        appearance: none;
-        background-color: inherit;
-        color: inherit;
-    }
-
-    .dark option, .dark select {
-        color: red;
-        background: #333;
-    }
-</style>
+<ul>
+  {Object.entries(languages).map(([lang, label]) => (
+    <li>
+      <a href={`/nti-consulting/${lang}/`}>{label}</a>
+    </li>
+  ))}
+</ul>

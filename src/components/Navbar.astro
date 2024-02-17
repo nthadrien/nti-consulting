@@ -1,4 +1,9 @@
 ---
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
 import LanguageSwitcher from "./LanguageSwitcher.astro";
 import Logo from "./Logo.astro";
 import ThemeSwitcher from "./ThemeSwitcher.astro";
@@ -8,9 +13,15 @@ import ThemeSwitcher from "./ThemeSwitcher.astro";
     <Logo />
 
     <div class="side-menu">
-        <a href="/nti-consulting/">accueil</a>
-        <a href="/nti-consulting/services">services</a>
-        <a href="/nti-consulting/about">a propos de nous</a>
+        <a href={`/nti-consulting/${lang}/`}>
+            {t('nav.home')}
+          </a>
+          <a href={`/nti-consulting/${lang}/services`}>
+            {t('nav.services')}
+          </a>
+          <a href={`/nti-consulting/${lang}/about`}>
+            {t('nav.about')}
+          </a>
         <ThemeSwitcher />
         <LanguageSwitcher />
         <a class="cbtn" href="#contacts">contactez nous</a>

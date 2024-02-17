@@ -1,0 +1,108 @@
+---
+import Layout from "../../layouts/Layout.astro";
+const pageTitle = "Nos Services";
+const description =
+    "❝Demander un service à quelqu'un est le plus souvent la plus haute marque de considération que puisse lui donner un homme fort de son caractère et de sa propre estime.❞_ Paul Thiébault";
+const image = "./";
+---
+
+<Layout title={pageTitle} description={description} image={image}>
+    <h1 class="tx-cn">Termes et conditions</h1>
+
+    <main class="container">
+        <section>
+            <a href="/">Introduction</a>
+            <a href="">b</a>
+        </section>
+
+        <article>
+            <p>
+                Bienvenue sur le site web de [Nom du cabinet comptable]. En
+                accédant à ce site, vous acceptez de vous conformer aux termes
+                et conditions d'utilisation énoncés ci-dessous. Veuillez lire
+                attentivement ces termes avant d'utiliser le site.
+            </p>
+
+            <h3>Politique de Confidentialité</h3>
+
+            <p>
+                Nous attachons une grande importance à la confidentialité et à
+                la protection des informations de nos clients. Toutes les
+                informations fournies à [Nom du cabinet comptable] sont traitées
+                avec la plus grande confidentialité et ne seront en aucun cas
+                partagées avec des tiers sans consentement explicite.
+            </p>
+
+            <h3>Politique de confidentialité</h3>
+
+            <p>
+                Notre politique de confidentialité détaille la manière dont nous
+                recueillons, utilisons et protégeons les informations que vous
+                nous fournissez. En utilisant ce site, vous reconnaissez avoir
+                pris connaissance et accepté notre politique de confidentialité.
+            </p>
+
+            <h3>Notre discrétion</h3>
+
+            <p>
+                Nous nous engageons à traiter toutes les informations que vous
+                partagez avec nous avec la plus grande discrétion. Nous
+                comprenons l'importance de la confidentialité dans le domaine de
+                l'expertise comptable, de l'audit et du commissariat aux
+                comptes, et nous nous engageons à préserver la confidentialité
+                de toutes les informations que vous partagez avec nous.
+            </p>
+
+            <h3>Utilisation du site</h3>
+
+            <p>
+                L'utilisation de ce site est soumise aux lois et réglementations
+                en vigueur. Vous acceptez de ne pas utiliser ce site à des fins
+                illégales ou non autorisées et de ne pas violer les droits de
+                tiers.
+            </p>
+
+            <h3>Propriété intellectuelle</h3>
+
+            <p>
+                Tous les contenus présents sur ce site, y compris mais sans s'y
+                limiter, les textes, images, vidéos, logos et graphiques, sont
+                la propriété exclusive de [Nom du cabinet comptable] et sont
+                protégés par les lois sur la propriété intellectuelle. Toute
+                reproduction ou utilisation non autorisée est strictement
+                interdite.
+            </p>
+
+            <h3>Modifications des termes et conditions</h3>
+
+            <p>
+                [Nom du cabinet comptable] se réserve le droit de modifier ces
+                termes et conditions à tout moment. Il est de votre
+                responsabilité de consulter régulièrement cette page pour
+                prendre connaissance des éventuelles mises à jour. En utilisant
+                ce site, vous acceptez pleinement ces termes et conditions. Si
+                vous n'êtes pas d'accord avec l'un de ces termes, veuillez ne
+                pas utiliser ce site. Pour toute question concernant nos termes
+                et conditions, veuillez nous contacter à l'adresse suivante :
+                [Adresse e-mail].
+            </p>
+        </article>
+    </main>
+</Layout>
+
+<style>
+    main {
+        display: grid;
+        grid-template-columns: auto auto;
+    }
+
+    article {
+        display: grid;
+        gap: 1rem;
+        line-height: 2;
+    }
+
+    section {
+        min-width: 32%;
+    }
+</style>

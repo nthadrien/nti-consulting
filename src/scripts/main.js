@@ -81,4 +81,3 @@ const sliderObserver = new IntersectionObserver(function (entries, navObserver) 
 navObserver.observe(header);
 faders.forEach( fader => faderObserver.observe(fader) );
 sliders.forEach( slide => sliderObserver.observe(slide) );
-console.log(sliders);
