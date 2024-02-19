@@ -1,11 +1,12 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import ServiceCard from "../components/ServiceCard.astro"
+import Layout from "../../layouts/Layout.astro";
+import ServiceCard from "../../components/ServiceCard.astro"
 import { getCollection } from "astro:content";
 const pageTitle = "Nos Services";
 const description ="❝Demander un service à quelqu'un est le plus souvent la plus haute marque de considération que puisse lui donner un homme fort de son caractère et de sa propre estime.❞_ Paul Thiébault";
 
-const services = await getCollection("services");
+const services = await getCollection("services")
+const filteredServices = await services.filter( service =>  service.slug.includes('fr/'));
 ---
 
 <Layout title={pageTitle} description={description}>
@@ -23,7 +24,7 @@ const services = await getCollection("services");
 
         <h2 class="aft tx-cn">Nos Services</h2>
         <ul>
-            {services.map((service) => <ServiceCard info={service.data} link={service.slug} />)}
+            {filteredServices.map((service) => <ServiceCard info={service.data} link={service.slug.slice(3)} />)}
         </ul>
     </main>
 </Layout>

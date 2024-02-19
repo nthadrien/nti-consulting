@@ -1,12 +1,26 @@
 ---
+import { getCollection } from "astro:content";
+import { ui } from "../i18n/ui";
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const services = await getCollection("services");
+const filteredServices = await services.filter((service) =>
+    service.slug.includes(lang + "/"),
+);
+
 import Logo from "./Logo.astro";
 import FooterAccordion from "./FooterAccordion.astro";
 
+const mainPages = ui[lang];
+
+
 const targets = {
     pages: [
-        { name: "acceuil", link: "/nti-consulting/" },
-        { name: "services", link: "/nti-consulting/services" },
-        { name: "A propos de Nous", link: "/about" },
+        { name: t("nav.home"), link: "/nti-consulting/" + lang },
+        { name: t("nav.services"), link: `/nti-consulting/${lang}/services` },
+        { name: t("nav.about"), link: `/nti-consulting/${lang}/about` },
     ],
     services: [
         { name: "Etude de feasibilite economiqu", link: "/" },
@@ -15,12 +29,18 @@ const targets = {
         { name: "Consultations", link: "/services" },
         { name: "ficalites", link: "/about" },
     ],
-    client: [
-        { name: "Site in English", link: "/nti-consulting/"},
-        { name: "Site en francais", link: "/nti-consulting/"},
-        { name: "termes & conditions", link: "/nti-consulting/termes-et-conditions"},
-        { name: "politique de condiidentialites", link: "/nti-consulting/termes-et-conditions" }
-    ]
+    clients: [
+        { name: "Page in English", link: "/nti-consulting/en" },
+        { name: "Site en francais", link: "/nti-consulting/fr" },
+        {
+            name: "termes & conditions",
+            link: "/nti-consulting/termes-et-conditions",
+        },
+        {
+            name: "politique de condiidentialites",
+            link: "/nti-consulting/termes-et-conditions",
+        },
+    ],
 };
 ---
 
@@ -28,7 +48,7 @@ const targets = {
     <section>
         <Logo />
 
-        <p>Vous pouvez nous suivre sur plusieurs plateformes:</p>
+        <p>{t("follow.us")}</p>
 
         <p>
             <a href="#">
@@ -74,7 +94,7 @@ const targets = {
 
     <FooterAccordion heading="pages" list={targets.pages} />
     <FooterAccordion heading="services" list={targets.services} />
-    <FooterAccordion heading="client" list={targets.client} />
+    <FooterAccordion heading="client" list={targets.clients} />
 </footer>
 
 <div class="last">

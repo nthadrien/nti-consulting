@@ -1,23 +1,23 @@
 ---
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 
 const mytext = encodeURIComponent('Bjr, On sait comment faire ici');
 ---
 
 <main  id="contacts" >
-    <h1 class="tx-cn">Contact</h1>
+    <h1 class="tx-cn">Contacts</h1>
 
     <div>
-        <h2>
-            Prêt à faire passer votre entreprise au niveau supérieur ?
-        </h2>
-        <p>
-            Contactez-nous dès aujourd'hui pour en savoir plus sur la manière dont NTI Businness Consulting peut soutenir la croissance de votre entreprise ou business.
-        </p>
+        <h2>{t('contact.rdy')}</h2>
+        <p>{t('contact.touch')}</p>
     </div>
 
     <form action="">
         <p>
-            <strong>Contacter nous :</strong><br />
+            <strong>{t('contact.us')} :</strong><br />
             <a href=`https://wa.me/237677316329?text=${mytext}`>
                 +237 696 560 588 <br />
                 +237 677 316 329 <br />
@@ -32,7 +32,7 @@ const mytext = encodeURIComponent('Bjr, On sait comment faire ici');
             rows="3"
             placeholder="Message"
             required></textarea>
-        <button class="btn"> Envoyer</button>
+        <button class="btn"> {t('send')}</button>
     </form>
 </main>
 

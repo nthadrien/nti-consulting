@@ -1,11 +1,15 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import ServiceCard from "../components/ServiceCard.astro"
+import Layout from "../../layouts/Layout.astro";
+import ServiceCard from "../../components/ServiceCard.astro";
 import { getCollection } from "astro:content";
 const pageTitle = "Nos Services";
-const description ="❝Demander un service à quelqu'un est le plus souvent la plus haute marque de considération que puisse lui donner un homme fort de son caractère et de sa propre estime.❞_ Paul Thiébault";
+const description =
+    "❝Demander un service à quelqu'un est le plus souvent la plus haute marque de considération que puisse lui donner un homme fort de son caractère et de sa propre estime.❞_ Paul Thiébault";
 
 const services = await getCollection("services");
+const filteredServices = await services.filter((service) =>
+    service.slug.includes("en/"),
+);
 ---
 
 <Layout title={pageTitle} description={description}>
@@ -13,30 +17,31 @@ const services = await getCollection("services");
         <h2 class="aft tx-cn">Services</h2>
 
         <p>
-            NTI Business Consulting est une team de spécialisés dans
-            l'élaboration de plans d'affaires solides et la réalisation d'études
-            de faisabilité économique pour aider les entreprises à prospérer
-            dans le paysage concurrentiel d'aujourd'hui. Notre équipe d'experts
-            est dédiée à fournir des solutions sur mesure qui répondent aux
-            besoins uniques de chaque client.
+            NTI Business Consulting is a team of specialists in the development
+            of solid business plans and the conduct of economic feasibility
+            studies to help businesses thrive in today's competitive landscape.
+            Our team of experts is dedicated to providing customized solutions
+            that meet the unique needs of each client.
         </p>
 
         <h2 class="aft tx-cn">Nos Services</h2>
         <ul>
-            {services.map((service) => <ServiceCard info={service.data} link={service.slug} />)}
+            {
+                filteredServices.map((service) => (
+                    <ServiceCard info={service.data} link={service.slug} />
+                ))
+            }
         </ul>
     </main>
 </Layout>
 
 <style>
-
     ul {
         display: grid;
-        grid-template-columns: repeat( auto-fill , minmax( 270px, 300px));
+        grid-template-columns: repeat(auto-fill, minmax(270px, 300px));
         grid-template-rows: auto;
         justify-content: space-evenly;
         align-items: start;
         gap: 1rem;
     }
-
 </style>

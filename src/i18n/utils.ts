@@ -1,7 +1,8 @@
 import { ui, defaultLang } from './ui';
 
 export function getLangFromUrl(url: URL) {
-  const [, lang] = url.pathname.split('/');
+  // const [, lang] = url.pathname.split('/'); not working since its a nested link
+  const lang = url.pathname.includes('en/') ? 'en' : 'fr';
   if (lang in ui) return lang as keyof typeof ui;
   return defaultLang;
 };
