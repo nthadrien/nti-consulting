@@ -3,9 +3,11 @@ import Layout from "../../layouts/Layout.astro";
 import { getCollection } from "astro:content";
 const pageTitle = "Bienvenue chez NTI-Consulting";
 const description =
-	"Prêt à faire passer votre entreprise au niveau supérieur ? Contactez-nous dès aujourd'hui pour en savoir plus sur la manière dont NTI-Consulting peut soutenir la croissance de votre entreprise.";
+	" NTI-Consulting peut soutenir et ameloirer la croissance de votre entreprise.";
 const link = "#contacts";
 const services = await getCollection("services");
+
+import img1 from "../../assets/p2.jpg";
 
 const WhyUs = [
 	{
@@ -44,8 +46,6 @@ const WhyUs = [
 			besoins uniques de chaque client.
 		</p>
 
-		<h2 class="aft tx-cn">Pourquoi Choisir NTI-Consulting ?</h2>
-
 		<p>
 			Au Cameroun, le taux de fermeture des entreprises par an est estimé
 			à 20% pour les moyennes entreprises(ME) ; 31% pour les petites
@@ -55,19 +55,24 @@ const WhyUs = [
 			services, vous avez l'assurance de prospérer.
 		</p>
 
-		<article>
-			{
-				WhyUs.map((item) => (
-					<section class="slide slide-top">
-						<h1>{item.icon}</h1>
-						<h3>{item.point} </h3>
-						<p>{item.reason}</p>
-					</section>
-				))
-			}
-		</article>
+		<h2 class="aft tx-cn">Le plus de NTI-Consulting</h2>
+	</main>
 
-		<h2>Nos Services</h2>
+	<article class="slide">
+		<!-- <img class="slide-left" src={img1.src} alt="'img1" /> -->
+		{
+			WhyUs.map((item) => (
+				<section class="slide-top">
+					<h1>{item.icon}</h1>
+					<h3>{item.point} </h3>
+					<p>{item.reason}</p>
+				</section>
+			))
+		}
+	</article>
+
+	<main>
+		<h2 class="aft tx-cn">Nos Services</h2>
 
 		<div>
 			<p>
@@ -91,17 +96,38 @@ const WhyUs = [
 		justify-content: space-between;
 		gap: 1rem;
 		height: fit-content;
+		padding: 4rem 1rem;
+		margin-bottom: 2rem;
 	}
 
-	section.slide {
+	section {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
 		border: 1px solid #8f8989;
 		border-radius: 12px;
 		padding: 1rem;
+		grid-area: auto;
+	}
+
+	img {
+		max-height: 1fr;
+		max-width: 1fr;
 	}
 
 	@media (min-width: 640px) {
 		article {
-			grid-template-columns: repeat(2, 1fr);
+			grid-template-columns: repeat(3, 1fr);
+		}
+
+		section:nth-of-type(2) {
+			grid-area: auto/auto/span 2 / span 2;
+		}
+
+		section:last-of-type {
+			grid-area: auto/auto/span 1 / span 3;
 		}
 	}
 </style>

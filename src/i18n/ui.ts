@@ -14,7 +14,7 @@ export const languages = {
       'contact.rdy':'Ready to take your business to the next level?',
       'contact.touch':"Contact Us today, if you wish to know how NTI Businness Consulting we can boost your enterprise or business income.",
       'send':'Send',
-      'follow.us':'We are also available on'
+      'follow.us':'We are also available on many social medias:'
     },
     fr: {
       'nav.home': 'Accueil',
@@ -24,6 +24,6 @@ export const languages = {
       'contact.rdy':'Prêt à faire passer votre entreprise au niveau supérieur ?',
       'contact.touch':"Contactez-nous dès aujourd'hui pour en savoir plus sur la manière dont NTI Businness Consulting peut soutenir la croissance de votre entreprise ou business.",
       'send':'Envoyer',
-      'follow.us':''
+      'follow.us':'Nous sommes aussi disponible sur vos les reseau sociaux:'
     },
   } as const;

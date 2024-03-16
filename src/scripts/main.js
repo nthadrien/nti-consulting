@@ -1,32 +1,4 @@
-// theme switch script;
 
-const theme = (() => {
-  if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
-    return localStorage.getItem('theme');
-  }
-  if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-    return 'dark';
-  }
-  return 'light';
-})();
-
-if (theme === 'light') {
-  document.querySelector('body').classList.remove('dark');
-} else {
-  document.querySelector('body').classList.add('dark');
-}
-
-window.localStorage.setItem('theme', theme);
-
-const handleToggleClick = () => {
-  const element = document.querySelector('body');
-  element.classList.toggle("dark");
-
-  const isDark = element.classList.contains("dark");
-  localStorage.setItem("theme", isDark ? "dark" : "light");
-};
-
-document.getElementById("themeToggle").addEventListener("click", handleToggleClick);
 
 // observers Scripts section;
 
@@ -81,3 +53,33 @@ const sliderObserver = new IntersectionObserver(function (entries, navObserver) 
 navObserver.observe(header);
 faders.forEach( fader => faderObserver.observe(fader) );
 sliders.forEach( slide => sliderObserver.observe(slide) );
+
+// theme switch script;
+const theme = (() => {
+  if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
+    return localStorage.getItem('theme');
+  }
+  if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    return 'dark';
+  }
+  return 'light';
+})();
+
+if (theme === 'light') {
+  document.querySelector('body').classList.remove('dark');
+} else {
+  document.querySelector('body').classList.add('dark');
+}
+
+window.localStorage.setItem('theme', theme);
+
+const handleToggleClick = () => {
+  const element = document.querySelector('body');
+  element.classList.toggle("dark");
+
+  const isDark = element.classList.contains("dark");
+  localStorage.setItem("theme", isDark ? "dark" : "light");
+};
+
+const tSwitch = document.querySelector("#themeToggle")
+tSwitch.addEventListener("click", handleToggleClick);

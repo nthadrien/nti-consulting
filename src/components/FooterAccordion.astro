@@ -1,16 +1,18 @@
 ---
-// interface Props {
-//   name: string;
-//   greeting?: string;
-// }
+interface Props {
+  heading: string;
+  list:{
+    link: string;
+    name: string
+  }[];
+}
 const { list, heading } = Astro.props;
 ---
 
 <section>
-    <h3>
-        {heading}
-        <span> ❮ </span>
-    </h3>
+    <p>
+        <strong>{heading}</strong>  <span> ❮ </span>
+    </p>
 
     <div>
         {list.map((item) => <a href={item.link}>{item.name}</a>)}
@@ -18,23 +20,23 @@ const { list, heading } = Astro.props;
 </section>
 
 <style>
-    section {
+
+    section  {
         display: flex;
         flex-direction: column;
-        justify-content: flex-start;
-        align-items: flex-start;
+        width: fit-content;
+        gap: inherit;
         width: 100%;
-        gap: 0.8rem;
     }
 
-    h3 {
+    p {
         width: 100%;
-        height: 46px;
         display: flex;
         justify-content: space-between;
         align-items: center;
         text-transform: capitalize;
-        border-bottom: 1px solid var(--bk-clr, #ddd);
+        font-weight: 700;
+        border-bottom: 1px solid #ddd;
     }
 
     div {
@@ -62,7 +64,7 @@ const { list, heading } = Astro.props;
 
     @media (min-width: 640px) {
         section {
-            min-width: fit-content;
+            width: fit-content;
             border: none;
         }
 
@@ -70,11 +72,12 @@ const { list, heading } = Astro.props;
             max-height: 100%;
         }
 
-        h3 {
-            border: none;
+        p {
+            width: fit-content;
+            border-bottom: 2px solid var(--cm-clr);
         }
 
-        h3 span {
+        p span {
             display: none;
         } 
     }

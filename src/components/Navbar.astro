@@ -1,5 +1,5 @@
 ---
-import { getLangFromUrl, useTranslations } from '../i18n/utils';
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
 
 import LanguageSwitcher from "./LanguageSwitcher.astro";
 import Logo from "./Logo.astro";
@@ -8,27 +8,26 @@ import ThemeSwitcher from "./ThemeSwitcher.astro";
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 ---
-
 <nav class="nav-scrolled">
-    <Logo /> 
+    <Logo />
 
     <div class="side-menu">
         <a href={`/nti-consulting/${lang}/`}>
             {t("nav.home")}
-          </a>
-          <a href={`/nti-consulting/${lang}/services`}>
-            {t('nav.services')}
-          </a>
-          <a href={`/nti-consulting/${lang}/about`}>
-            {t('nav.about')}
-          </a>
-        
-    </div>
+        </a>
+        <a href={`/nti-consulting/${lang}/services`}>
+            {t("nav.services")}
+        </a>
+        <a href={`/nti-consulting/${lang}/about`}>
+            {t("nav.about")}
+        </a>
 
-    <div>
-        <ThemeSwitcher />
-        <LanguageSwitcher />
-        <a class="cbtn" href="#contacts">{t('contact.us')}</a>
+        <section>
+            <ThemeSwitcher />
+            <LanguageSwitcher />
+        </section>
+
+        <a class="cbtn" href="#contacts">Contacts</a>
     </div>
 
     <label>
@@ -48,7 +47,7 @@ const t = useTranslations(lang);
         padding: 0.5rem 1rem;
         position: fixed;
         top: 0;
-        color: white;
+        color: aliceblue;
         /* box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; */
         z-index: 3;
     }
@@ -140,12 +139,20 @@ const t = useTranslations(lang);
         color: inherit;
     }
 
+    section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 3rem;
+    }
+
     @media (min-width: 640px) {
         label {
             display: none;
         }
 
-        :global(.dark) .side-menu, .side-menu {
+        :global(.dark) .side-menu,
+        .side-menu {
             flex-direction: row;
             transform: translateY(0vh);
             position: static;
@@ -164,6 +171,10 @@ const t = useTranslations(lang);
         .cbtn:hover {
             background: var(--cm-clr);
             color: white;
+        }
+
+        section {
+            display: none;
         }
     }
 </style>

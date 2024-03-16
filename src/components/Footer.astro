@@ -13,8 +13,6 @@ const filteredServices = await services.filter((service) =>
 import Logo from "./Logo.astro";
 import FooterAccordion from "./FooterAccordion.astro";
 
-const mainPages = ui[lang];
-
 
 const targets = {
     pages: [
@@ -23,22 +21,20 @@ const targets = {
         { name: t("nav.about"), link: `/nti-consulting/${lang}/about` },
     ],
     services: [
-        { name: "Etude de feasibilite economiqu", link: "/" },
-        { name: "Business plan", link: "/nti-consulting/services" },
-        { name: "Audit", link: "/nti-consulting/about" },
-        { name: "Consultations", link: "/services" },
-        { name: "ficalites", link: "/about" },
+        { name: "Business plan", link: "/nti-consulting/"+lang+"/services/service-1" },
+        { name: "Consultations", link: "/nti-consulting/"+lang+"/services/service-2" },
+        { name: "ficalites", link: "/nti-consulting/"+lang+"/services/service-3"},
     ],
     clients: [
         { name: "Page in English", link: "/nti-consulting/en" },
         { name: "Site en francais", link: "/nti-consulting/fr" },
         {
             name: "termes & conditions",
-            link: "/nti-consulting/termes-et-conditions",
+            link: "/nti-consulting/"+lang+"/termes-et-conditions",
         },
         {
             name: "politique de condiidentialites",
-            link: "/nti-consulting/termes-et-conditions",
+            link: "/nti-consulting/"+lang+"/termes-et-conditions",
         },
     ],
 };
@@ -94,7 +90,7 @@ const targets = {
 
     <FooterAccordion heading="pages" list={targets.pages} />
     <FooterAccordion heading="services" list={targets.services} />
-    <FooterAccordion heading="client" list={targets.clients} />
+    <FooterAccordion heading="clients" list={targets.clients} />
 </footer>
 
 <div class="last">
@@ -111,11 +107,11 @@ const targets = {
     }
 
     section {
+        flex-basis: 2;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        width: 100%;
         gap: 0.6rem;
     }
 

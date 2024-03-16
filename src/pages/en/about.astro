@@ -68,7 +68,7 @@ const faq = [
     <main class="container">
         <h1 class="aft tx-cn">A props de Nous</h1>
 
-        <p>
+        <p style="text-align:center;">
             NTI BUSINESS CONSULTING is a platform bringing together an
             accounting, audit, and consulting firm, project managers, and other
             specialists necessary for the development of your business.
@@ -161,8 +161,8 @@ const faq = [
 
     @media (min-width: 640px) {
         .list {
-            grid-template-columns: repeat(2, 1fr);
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax( 190px, 300px));
+            gap: 1.2rem;
         }
     }
 </style>

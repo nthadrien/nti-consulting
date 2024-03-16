@@ -5,8 +5,6 @@ const lang = getLangFromUrl(Astro.url);
 
 import Navbar from "../components/Navbar.astro";
 import Footer from "../components/Footer.astro";
-import Contacts from "../components/Contacts.astro";
-import Header from "../components/Header.astro";
 interface Props {
 	title: string;
 	description: string;
@@ -14,7 +12,7 @@ interface Props {
 	link?:string;
 }
 
-const { title, description, image, link } = Astro.props;
+const { title, description } = Astro.props;
 ---
 
 <!doctype html>
@@ -29,9 +27,7 @@ const { title, description, image, link } = Astro.props;
 	</head>
 	<body>
 		<Navbar />
-		<Header description={description} image={image} link={link} />
 		<slot />
-		<Contacts />
 		<Footer />
 	</body>
 	<script src="../scripts/main.js"></script>
@@ -116,7 +112,7 @@ const { title, description, image, link } = Astro.props;
 	}
 
 	.btn {
-		padding: 0.5em 0.8em;
+		padding: 0.8em;
 		text-align: center;
 		border: 1px solid #ddd;
 		background: transparent;
@@ -215,6 +211,5 @@ const { title, description, image, link } = Astro.props;
 	.cbtn {
 		background: transparent;
 		color: inherit;
-		border-radius: 8px;
 	}
 </style>
